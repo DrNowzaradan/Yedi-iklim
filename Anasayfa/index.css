@@ -1,0 +1,990 @@
+* {
+  font-family: "Montserrat", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-weight: 500;
+  scroll-behavior: smooth;
+  list-style: none;
+}
+@keyframes scaleoff {
+  0% {
+    transform: scale(1) translate(-50%, -50%);
+  }
+  20% {
+    transform: scale(1.1) translate(-50%, -50%);
+  }
+  100% {
+    transform: scale(0) translate(-50%, -50%);
+  }
+}
+@keyframes scaleon {
+  0% {
+    transform: scale(0) translate(-50%, -50%);
+  }
+  80% {
+    transform: scale(1.1) translate(-50%, -50%);
+  }
+  100% {
+    transform: scale(1) translate(-50%, -50%);
+  }
+}
+/*-------------------------------modal css kodu --------------------------------------------*/
+.modal-container {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 500px;
+  height: 350px;
+  background-color: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(16px);
+  border: none;
+  border-radius: 5px;
+  box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.4);
+  z-index: 999;
+}
+.scaleon {
+  transform: scale(0);
+  animation-name: scaleon;
+  animation-duration: 0.5s;
+  animation-timing-function: ease-in;
+  animation-fill-mode: forwards;
+  animation-delay: 1s;
+}
+.scaleoff {
+  animation-name: scaleoff;
+  animation-timing-function: ease-in;
+  animation-duration: 0.3s;
+  animation-fill-mode: forwards;
+}
+.modal-text {
+  width: 100%;
+  height: 300px;
+  padding: 20px;
+  border-radius: 5px;
+  background-color: transparent;
+  text-align: center;
+}
+.modal-text h4,
+.modal-text h5 {
+  font-weight: 600;
+}
+.modal-text h5 {
+  margin-top: 20px;
+}
+.modal-buttongroup {
+  width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+}
+.modal-closebutton,
+.modal-linkbutton {
+  border: none;
+  outline: none;
+  text-align: center;
+  width: 200px;
+  height: 40px;
+  border-radius: 5px;
+  transition: all 0.3s;
+}
+.modal-linkbutton {
+  background-color: #7bf1a8;
+}
+.modal-linkbutton:hover {
+  box-shadow: 0 0 30px 0 rgba(123, 241, 168, 0.7);
+}
+.modal-closebutton {
+  background-color: #ff6347;
+}
+.modal-closebutton:hover {
+  box-shadow: 0 0 30px 0 rgba(255, 99, 71, 0.7);
+}
+/*--------------------------------modal css kodu sonu-------------------------------*/
+header,
+.sidebar {
+  position: sticky;
+  z-index: 999;
+  top: 0px;
+}
+.topheader-container {
+  width: 100%;
+  height: 120px;
+  display: flex;
+  justify-content: center;
+  background-color: #fff;
+}
+.topheadercontainer-content {
+  width: 70%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.logolinks-area {
+  width: 300px;
+  height: 100%;
+  display: block;
+  position: relative;
+}
+.logo {
+  width: 100%;
+  height: 120px;
+  text-decoration: none;
+  display: inline-block;
+  background: url(../Görseller/logo.jpeg) no-repeat;
+  background-size: contain;
+}
+.links-container {
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  position: absolute;
+  bottom: 0;
+}
+.links-container a {
+  text-decoration: none;
+  color: #4d4d4d;
+}
+.links-container i {
+  font-size: 20px;
+}
+.links-container a:hover {
+  color: #1f8dd6;
+}
+.slogan-area {
+  width: 300px;
+  height: 70px;
+  background: url(../Görseller/yediiklimslogan.png) no-repeat;
+  background-size: contain;
+}
+.contact-area {
+  display: flex;
+  width: 300px;
+  height: 100%;
+  align-items: center;
+}
+.contact-area i {
+  font-size: 20px;
+  margin-right: 20px;
+}
+.contacts {
+  display: block;
+  width: 200px;
+}
+.contact {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.contact a {
+  color: #4d4d4d;
+}
+.contact a:hover {
+  color: #1f8dd6;
+}
+.socialmedia-button {
+  height: 32px;
+  width: 32px;
+  margin-right: 10px;
+  background-color: white;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.1);
+  float: left;
+  overflow: hidden;
+  transition: 0.3s;
+  color: black;
+}
+.socialmedia-button:hover {
+  width: 125px;
+}
+.fadewrapper:nth-child(3) .socialmedia-button:hover {
+  color: #fff;
+  background-color: #4169e1;
+}
+.fadewrapper:nth-child(4) .socialmedia-button:hover {
+  color: #fff;
+  background: linear-gradient(to right, #8a3ab9, #e95950, #fccc63);
+}
+.fadewrapper:nth-child(5) .socialmedia-button:hover {
+  color: #fff;
+  background-color: #ff6347;
+}
+.fadewrapper:nth-child(6) .socialmedia-button:hover {
+  color: #fff;
+  background-color: #00acee;
+}
+.socialmedia-button .socialmedia-icon {
+  display: inline-block;
+  height: 32px;
+  width: 32px;
+  text-align: center;
+  vertical-align: middle;
+  border-radius: 50px;
+}
+.socialmedia-icon i {
+  font-size: 16px;
+  line-height: 32px;
+  width: 32px;
+  height: 32px;
+  border-radius: 50px;
+}
+.socialmedia-button strong {
+  font-size: 14px;
+}
+.signInlink {
+  display: none;
+  text-decoration: none;
+  color: #1a1a1a;
+  cursor: pointer;
+  align-items: center;
+  transition: all 0.3s;
+}
+.signInlink:hover {
+  color: #1a1a1a;
+  transform: scale(1.1);
+}
+.signInlink i {
+  margin-right: 5px;
+}
+header {
+  width: 100%;
+  height: 60px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: #1f8dd6;
+  box-shadow: 0 5px 30px 0 rgba(31, 141, 214, 0.3);
+}
+.bigscreen-header {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.smallscreen-header {
+  width: 100%;
+  display: none;
+}
+.sidebar-togglebutton {
+  margin-left: 40%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: #4d4d4d;
+  font-size: 24px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: all 0.3s;
+}
+.sidebar-togglebutton:hover {
+  background-color: #e6e6e6;
+  color: #1a1a1a;
+}
+/*--------------------------Header css kodu------------------------------*/
+
+
+.nav-item a {
+  color: #e6e6e6;
+  transition: all 0.3s;
+  margin-left: 10px;
+  border-radius: 5px;
+}
+.dropdown-menu a {
+  color: #4d4d4d;
+  margin-left: 0;
+  border-radius: 0;
+}
+
+.nav-item .active {
+  color: #1a1a1a;
+}
+.nav-item a:hover {
+  color: #4d4d4d;
+  background-color: #e6e6e6;
+}
+
+.signInbutton {
+  width: 100px;
+  height: 40px;
+  border: none;
+  border-radius: 5px;
+  transition: 0.3s;
+  background-color: #e6e6e6;
+  color: #1a1a1a;
+  margin-left: 20%;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.signInbutton:hover {
+  box-shadow: 0 0 40px 0 rgba(242, 242, 242, 0.3);
+  color: #1a1a1a;
+}
+/*----------------------------------------Küçük ekranda açılacak olan sidebar css kodları-----------------------------------*/
+.sidebar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 300px;
+  display: block;
+  height: 100vh;
+  background-color: #1f8dd6;
+  transform: translateX(-300px);
+  transition: all 0.3s;
+}
+.sidebar-header {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin: 20px 0;
+}
+.sidebar img {
+  margin-left: 15%;
+  height: 100px;
+  top: 0;
+  background-color: transparent;
+}
+.sidebar-closebutton {
+  width: 40px;
+  height: 40px;
+  position: absolute;
+  right: 5%;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: #4d4d4d;
+  font-size: 24px;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  transition: all 0.3s;
+  cursor: pointer;
+  border-radius: 5px;
+}
+.sidebar-closebutton:hover {
+  background-color: #f2f2f2;
+  color: #808080;
+}
+.sidebar-nav {
+  display: block;
+  margin-top: 50px;
+  position: relative;
+}
+.sidebar-nav .nav-item .active {
+  color: #000;
+}
+.sidebar-nav .nav-item a {
+  color: #e6e6e6;
+}
+.sidebar-nav .nav-item a:hover {
+  background-color: #f2f2f2;
+  color: #4d4d4d;
+}
+.sidebar .signInbutton {
+  width: 280px;
+  margin: 30px 10px;
+  background-color: #f2f2f2;
+  color: #1a1a1a;
+  text-decoration: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.sidebar .signInbutton:hover {
+  background-color: #e6e6e6;
+  box-shadow: 0 0 30px 0 rgba(242, 242, 242, 0.3);
+  color: #1a1a1a;
+}
+.show {
+  transform: translateX(0);
+}
+/*----------------------------------------sidebar css kodları sonu--------------------------------------------*/
+
+.slide {
+  position: relative;
+}
+.carousel-item img {
+  display: block;
+  margin: 0 auto;
+}
+.carousel .carousel-control-prev-icon,
+.carousel .carousel-control-next-icon {
+  background-color: rgba(0, 0, 0, 0.7);
+}
+.pagelink-container {
+  width: 100%;
+  background-color: #f2f2f2;
+  border-radius: 0;
+  padding: 40px 0 40px 0;
+}
+.pagelink-cards {
+  width: auto;
+  display: flex;
+  flex-wrap: wrap;
+  margin-left: 20%;
+}
+.pagelink-card {
+  width: 350px;
+  height: 220px;
+  background-color: #b3b3b3;
+  margin: 10px 20px 10px 0;
+  cursor: pointer;
+  transition: 0.3s;
+  background: rgba(0, 0, 0, 0.4) url(../Görseller/eğitimler.jpg);
+  background-blend-mode: darken;
+  background-size: cover;
+  border-radius: 5px;
+  position: relative;
+}
+.pagelink-card:hover {
+  transform: scale(1.05);
+}
+.card-text {
+  font-size: 18px;
+  position: absolute;
+  bottom: 10%;
+  left: 10%;
+  font-weight: 700;
+  color: #f2f2f2;
+}
+.courseslink-container {
+  width: 100%;
+  display: block;
+  padding: 30px 0;
+}
+.courseslink-container h2 {
+  text-align: center;
+}
+.courselink-cards {
+  width: auto;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 50px 0 50px 20%;
+}
+.courselink-card {
+  position: relative;
+  margin-right: 20px;
+  margin-top: 20px;
+  width: 350px;
+  height: 250px;
+  border-radius: 5px;
+  box-shadow: 0 0 40px 0 rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  background: rgba(0, 0, 0, 0.5);
+  transition: transform 0.3s;
+}
+.courselink-card:hover {
+  transform: scale(1.05);
+}
+.courselink-card:nth-child(1) {
+  background: rgba(0, 0, 0, 0.5) url(../Görseller/online-kurs.jpg);
+  background-size: 100%;
+  background-blend-mode: darken;
+  background-repeat: no-repeat;
+}
+.courselink-card:nth-child(2) {
+  background: rgba(0, 0, 0, 0.5) url(../Görseller/online_öğretmen.jpg);
+  background-size: 100%;
+  background-blend-mode: darken;
+  background-repeat: no-repeat;
+}
+.courselink-card:nth-child(3) {
+  background: rgba(0, 0, 0, 0.5) url(../Görseller/sınav.jpg);
+  background-size: 100%;
+  background-blend-mode: darken;
+  background-repeat: no-repeat;
+}
+.courselink-text {
+  position: absolute;
+  bottom: 5%;
+  left: 5%;
+  color: #f2f2f2;
+}
+.courselink-text div {
+  font-size: 18px;
+  font-weight: 600;
+}
+.video-container {
+  width: 100%;
+  background-color: #f2f2f2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px 0;
+  margin-bottom: 20px;
+}
+.video-container video {
+  width: 50%;
+  height: 400px;
+}
+footer {
+  width: 100%;
+  height: auto;
+  padding-bottom: 50px;
+  background-color: #1f8dd6;
+  display: flex;
+}
+.footericon-container,
+.footercontact-container {
+  margin-top: 50px;
+  width: 500px;
+}
+.footericon-container {
+  margin-left: 20%;
+}
+.footercontact-container {
+  margin-left: 10%;
+}
+.footer-header {
+  font-size: 24px;
+}
+.footericon-header {
+  text-align: center;
+}
+.footersocialmedia-container {
+  display: flex;
+  align-items: center;
+  margin-top: 50px;
+}
+.smallsocialmediacontainer {
+  display: none;
+  align-items: center;
+  justify-content: space-evenly;
+  margin-top: 50px;
+}
+.smallsocialmediacontainer a {
+  text-decoration: underline;
+  color: #4d4d4d;
+}
+.smallsocialmediacontainer a:hover {
+  color: #1a1a1a;
+}
+.footersocialmedia-container .socialmedia-button {
+  width: 64px;
+  height: 64px;
+  margin-right: 75px;
+}
+.footersocialmedia-container .socialmedia-button:hover {
+  width: 200px;
+}
+.footersocialmedia-container .socialmedia-icon {
+  height: 64px;
+  width: 64px;
+}
+.footersocialmedia-container .socialmedia-icon i {
+  font-size: 24px;
+  line-height: 64px;
+}
+.footer-fadewrapper:nth-child(1) .socialmedia-button:hover {
+  color: #fff;
+  background-color: #4169e1;
+}
+.footer-fadewrapper:nth-child(2) .socialmedia-button:hover {
+  color: #fff;
+  background: linear-gradient(to right, #8a3ab9, #e95950, #fccc63);
+}
+.footer-fadewrapper:nth-child(3) .socialmedia-button:hover {
+  color: #fff;
+  background-color: #ff6347;
+}
+.footer-fadewrapper:nth-child(4) .socialmedia-button:hover {
+  color: #fff;
+  background-color: #00acee;
+}
+.footersocialmedia-container .socialmedia-button strong {
+  font-size: 16px;
+}
+.footer-text {
+  width: 100%;
+  line-height: 24px;
+  margin-top: 50px;
+}
+/*--------------------------------------Medya sorguları------------------------------------*/
+@media only screen and (min-width: 1440px) {
+  .sidebar {
+    transform: translateX(-300px);
+  }
+}
+@media only screen and (min-width: 1200px) and (max-width: 1440px) {
+  .slogan-area {
+    display: none;
+  }
+  .sidebar {
+    transform: translateX(-300px);
+  }
+  .signInbutton {
+    margin-left: 10%;
+  }
+  .carousel-item img {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+  }
+}
+@media only screen and (min-width: 992px) and (max-width: 1199px) {
+  .slogan-area {
+    display: none;
+  }
+ 
+  .sidebar {
+    transform: translateX(-300px);
+  }
+  .carousel-item img {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+  }
+  .video-container video {
+    width: 75%;
+  }
+  .footericon-container {
+    margin-left: 10%;
+  }
+  .footersocialmedia-container {
+    display: none;
+  }
+  .smallsocialmediacontainer {
+    display: flex;
+  }
+}
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+  .topheadercontainer-content {
+    width: 100%;
+    justify-content: center;
+  }
+  .slogan-area {
+    display: none;
+  }
+  .contact-area {
+    display: none;
+  }
+  .signInlink {
+    display: flex;
+  }
+  .bigscreen-header {
+    display: none;
+  }
+  .smallscreen-header {
+    display: flex;
+    align-items: center;
+  }
+  .carousel-item img {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+  }
+  .pagelink-cards,
+  .courselink-cards {
+    width: 100%;
+    margin-left: 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .pagelink-card,
+  .courselink-card {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .courseslink-container h2 {
+    width: 100%;
+    margin: 0;
+    text-align: center;
+  }
+  .video-container video {
+    width: 75%;
+  }
+  footer {
+    display: block;
+    padding-top: 20px;
+  }
+  .footericon-container {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+  .footercontact-container {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    margin-top: 70px;
+  }
+  .footersocialmedia-container {
+    display: none;
+  }
+  .smallsocialmediacontainer {
+    display: flex;
+    justify-content: space-evenly;
+    margin-right: 0;
+  }
+  .smallsocialmediacontainer a {
+    margin-right: 0;
+  }
+}
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+  .topheadercontainer-content {
+    width: 100%;
+    justify-content: center;
+  }
+  .slogan-area {
+    display: none;
+  }
+  .contact-area {
+    display: none;
+  }
+  .signInlink {
+    display: flex;
+  }
+  .bigscreen-header {
+    display: none;
+  }
+  .smallscreen-header {
+    display: flex;
+    align-items: center;
+  }
+  .carousel-item img {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+  }
+  .pagelink-cards,
+  .courselink-cards {
+    width: 100%;
+    margin-left: 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .pagelink-card,
+  .courselink-card {
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .courseslink-container h2 {
+    width: 100%;
+    margin: 0;
+    text-align: center;
+  }
+  .video-container video {
+    width: 75%;
+  }
+  footer {
+    display: block;
+    padding-top: 20px;
+  }
+  .footericon-container {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+  }
+  .footercontact-container {
+    margin-left: auto;
+    margin-right: auto;
+    text-align: center;
+    margin-top: 70px;
+  }
+  .footersocialmedia-container {
+    display: none;
+  }
+  .smallsocialmediacontainer {
+    display: flex;
+    justify-content: space-evenly;
+    margin-right: 0;
+  }
+  .smallsocialmediacontainer a {
+    margin-right: 0;
+  }
+}
+@media only screen and (min-width: 340px) and (max-width: 575px) {
+  .topheadercontainer-content {
+    width: 100%;
+    justify-content: center;
+  }
+  .slogan-area {
+    display: none;
+  }
+  .contact-area {
+    display: none;
+  }
+  .modal-container {
+    width: 300px;
+    background-color: #f2f2f2;
+  }
+  .modal-closebutton,
+  .modal-linkbutton {
+    width: 100px;
+  }
+
+  .bigscreen-header {
+    display: none;
+  }
+  .smallscreen-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .smallscreen-header img {
+    margin-left: 5%;
+  }
+  .sidebar-togglebutton {
+    margin-left: 0;
+  }
+  .signInlink {
+    display: flex;
+  }
+  .carousel-item img {
+    width: 100%;
+    height: 200px;
+    margin: 0;
+  }
+  .pagelink-cards,
+  .courselink-cards {
+    width: 100%;
+    margin-left: 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .pagelink-card,
+  .courselink-card {
+    width: 320px;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .courseslink-container h2 {
+    width: 100%;
+    margin: 0;
+    text-align: center;
+  }
+  .video-container video {
+    width: 90%;
+  }
+  footer {
+    display: block;
+    padding-top: 20px;
+  }
+  .footercontact-container,
+  .footericon-container {
+    text-align: center;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .footercontact-container {
+    margin-top: 70px;
+  }
+  .footersocialmedia-container {
+    display: none;
+  }
+  .smallsocialmediacontainer {
+    display: flex;
+    justify-content: space-around;
+    margin-right: 0;
+  }
+  .smallsocialmediacontainer a {
+    margin-right: 0;
+  }
+}
+@media only screen and (max-width: 340px) {
+  .topheadercontainer-content {
+    width: 100%;
+    justify-content: center;
+  }
+  .slogan-area {
+    display: none;
+  }
+  .contact-area {
+    display: none;
+  }
+  .modal-container {
+    width: 300px;
+    background-color: #f2f2f2;
+    top: 60%;
+  }
+  .modal-closebutton,
+  .modal-linkbutton {
+    width: 100px;
+  }
+  .socialmediacontainer {
+    display: none;
+  }
+  .bigscreen-header {
+    display: none;
+  }
+  .smallscreen-header {
+    display: flex;
+    align-items: center;
+  }
+  .smallscreen-header img {
+    margin-left: 5%;
+  }
+  .sidebar-togglebutton {
+    margin-left: 30%;
+  }
+  .signInlink {
+    display: flex;
+  }
+  .carousel-item img {
+    width: 100%;
+    height: 200px;
+    margin: 0;
+  }
+  .pagelink-cards,
+  .courselink-cards {
+    width: 100%;
+    margin-left: 0;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+  .pagelink-card,
+  .courselink-card {
+    width: 300px;
+    margin-left: 0;
+    margin-right: 0;
+  }
+  .courseslink-container h2 {
+    width: 100%;
+    margin: 0;
+    text-align: center;
+  }
+  .video-container video {
+    width: 90%;
+  }
+  footer {
+    display: block;
+    padding-top: 20px;
+  }
+  .footercontact-container,
+  .footericon-container {
+    text-align: center;
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .footericon-container {
+    width: 100%;
+  }
+  .footercontact-container {
+    margin-top: 70px;
+  }
+  .footersocialmedia-container {
+    display: none;
+  }
+  .smallsocialmediacontainer {
+    display: flex;
+    justify-content: space-around;
+    margin-right: 0;
+  }
+  .smallsocialmediacontainer a {
+    margin-right: 0;
+  }
+}
